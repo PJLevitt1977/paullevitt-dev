@@ -1,0 +1,56 @@
+@layer components {
+  .hero {
+    padding-block: clamp(2rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
+
+    & h1 {
+      font-size: var(--step-4);
+      font-weight: 700;
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
+      max-width: 15ch;
+
+      & em { font-style: normal; color: var(--brass); }
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-block-end: 1.75rem;
+  }
+
+  .standfirst {
+    margin-block-start: 1.9rem;
+    max-width: 60ch;
+    font-size: var(--step-1);
+    line-height: 1.55;
+    color: var(--muted);
+
+    & strong { color: var(--ivory); font-weight: 500; }
+  }
+
+  .availability {
+    margin-block-start: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid color-mix(in oklab, var(--mint) 40%, var(--edge));
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--mint);
+
+    & i {
+      inline-size: 7px;
+      block-size: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      flex: none;
+    }
+  }
+}

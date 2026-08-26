@@ -1,0 +1,44 @@
+/* Layer order is declared first so partials can be imported in any order
+   without their position in the file affecting the cascade. */
+@layer reset, tokens, layout, components, utilities;
+
+@import "./reset.css";
+@import "./tokens.css";
+@import "./layout.css";
+
+@import "./components/masthead.css";
+@import "./components/hero.css";
+@import "./components/capsule.css";
+@import "./components/tile.css";
+@import "./components/stack.css";
+@import "./components/prose.css";
+@import "./components/role.css";
+@import "./components/contact.css";
+
+@layer utilities {
+  .visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .skip-link {
+    position: absolute;
+    inset-block-start: 0.5rem;
+    inset-inline-start: 0.5rem;
+    z-index: 10;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    background: var(--brass);
+    color: #12161c;
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    text-decoration: none;
+    transform: translateY(-200%);
+
+    &:focus { transform: none; }
+  }
+}

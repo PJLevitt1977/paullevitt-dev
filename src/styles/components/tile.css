@@ -1,0 +1,108 @@
+@layer components {
+  .tile {
+    position: relative;
+    background: var(--slab);
+    border: 1px solid var(--edge);
+    border-radius: var(--radius);
+    padding: clamp(1.3rem, 3vw, 1.9rem);
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-block-start: -5px;
+      inset-inline-start: clamp(1.4rem, 3vw, 2rem);
+      inline-size: var(--stud-w);
+      block-size: var(--stud-h);
+      border-radius: 5px 5px 0 0;
+      background: var(--accent);
+    }
+
+    & .kicker {
+      font-family: var(--mono);
+      font-size: var(--step--1);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-block-end: 0.85rem;
+    }
+
+    & h3 {
+      font-size: var(--step-2);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      text-wrap: balance;
+    }
+
+    & > p {
+      margin-block-start: 0.8rem;
+      color: var(--muted);
+      max-width: 54ch;
+    }
+  }
+
+  /* Only tiles that are links get link affordances. */
+  a.tile {
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 180ms ease, background 180ms ease;
+
+    &:hover, &:focus-visible {
+      background: var(--slab-2);
+      border-color: var(--accent);
+    }
+  }
+
+  .ports {
+    margin-block-start: 1.3rem;
+    padding-block-start: 1rem;
+    border-block-start: 1px solid var(--edge);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-family: var(--mono);
+    font-size: var(--step--1);
+
+    & li {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: var(--slab-2);
+      color: var(--muted);
+    }
+  }
+
+  /* ── projects filter ──────────────────────── */
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-block-end: 1.5rem;
+    font-family: var(--mono);
+    font-size: var(--step--1);
+
+    & button {
+      border: 1px solid var(--edge);
+      background: var(--slab);
+      color: var(--muted);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: border-color 180ms ease, color 180ms ease;
+
+      &:hover { color: var(--ivory); border-color: var(--muted); }
+
+      &[aria-pressed="true"] {
+        background: var(--brass);
+        border-color: var(--brass);
+        color: #12161c;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .tile[hidden] { display: none; }
+}

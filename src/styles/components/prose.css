@@ -1,0 +1,139 @@
+@layer components {
+  /* Long-form reading column. Deliberately narrower than the grid pages —
+     prose wants ~65 characters, not the full 1200px shell. */
+  .prose {
+    max-width: 62ch;
+    font-size: var(--step-1);
+    line-height: 1.65;
+    color: color-mix(in oklab, var(--ivory) 88%, var(--muted));
+
+    & > * + * { margin-block-start: 1.35em; }
+
+    & > h2 {
+      font-family: var(--mono);
+      font-size: var(--step--1);
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-block-start: 3rem;
+    }
+
+    & strong { color: var(--ivory); font-weight: 600; }
+
+    & a {
+      color: var(--brass);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    & .lead {
+      font-size: var(--step-2);
+      line-height: 1.45;
+      color: var(--ivory);
+      letter-spacing: -0.015em;
+      text-wrap: pretty;
+    }
+  }
+
+  /* A quiet aside pulled out of the reading flow. */
+  .aside {
+    --accent: var(--sky);
+    position: relative;
+    margin-block: 2.25rem;
+    padding: 1.3rem 1.4rem;
+    background: var(--slab);
+    border: 1px solid var(--edge);
+    border-radius: var(--radius);
+    font-size: var(--step-0);
+    color: var(--muted);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-block-start: -5px;
+      inset-inline-start: 1.5rem;
+      inline-size: 26px;
+      block-size: var(--stud-h);
+      border-radius: 5px 5px 0 0;
+      background: var(--accent);
+    }
+
+    & p + p { margin-block-start: 0.8rem; }
+  }
+
+  /* Principles — short, declarative, scannable between prose sections. */
+  .principles {
+    display: grid;
+    gap: var(--gap);
+    margin-block: 2.5rem;
+    max-width: none;
+  }
+
+  @media (min-width: 46rem) {
+    .principles { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .principle {
+    position: relative;
+    background: var(--slab);
+    border: 1px solid var(--edge);
+    border-radius: var(--radius);
+    padding: 1.2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-block-start: -5px;
+      inset-inline-start: 1.3rem;
+      inline-size: 26px;
+      block-size: var(--stud-h);
+      border-radius: 5px 5px 0 0;
+      background: var(--accent);
+    }
+
+    & h3 {
+      font-size: var(--step-1);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      text-wrap: balance;
+      color: var(--ivory);
+    }
+
+    & p {
+      margin-block-start: 0.6rem;
+      font-size: var(--step-0);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+  }
+
+  /* Portrait sits beside the opening on wide screens, above it on narrow. */
+  .about-head {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+  }
+
+  @media (min-width: 60rem) {
+    .about-head { grid-template-columns: 1fr 18rem; }
+  }
+
+  .portrait {
+    border-radius: var(--radius);
+    border: 1px solid var(--edge);
+    background: var(--slab);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    inline-size: 100%;
+  }
+
+  .portrait-caption {
+    margin-block-start: 0.7rem;
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--muted);
+    line-height: 1.6;
+  }
+}

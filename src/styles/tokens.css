@@ -1,0 +1,44 @@
+@layer tokens {
+  :root {
+    /* ── palette ────────────────────────────── */
+    --canvas: #0e1116;
+    --slab:   #171d26;
+    --slab-2: #202834;
+    --edge:   #2c3644;
+    --ivory:  #f1efe9;
+    --muted:  #8a94a4;
+
+    --brass: #e3b23c;
+    --sky:   #56a8e0;
+    --rose:  #e0607e;
+    --mint:  #63c4a0;
+
+    /* ── type ───────────────────────────────── */
+    --sans: "Avenir Next", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+
+    --step--1: clamp(0.76rem, 0.74rem + 0.1vw, 0.82rem);
+    --step-0:  clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
+    --step-1:  clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+    --step-2:  clamp(1.35rem, 1.2rem + 0.75vw, 1.8rem);
+    --step-3:  clamp(1.7rem, 1.4rem + 1.4vw, 2.6rem);
+    --step-4:  clamp(2.7rem, 1.7rem + 4.6vw, 6rem);
+
+    /* ── space & shape ──────────────────────── */
+    --gutter: clamp(1.25rem, 4vw, 3.5rem);
+    --gap: 10px;
+    --radius: 14px;
+    --stud-w: 30px;
+    --stud-h: 9px;
+
+    /* default accent — components override per instance */
+    --accent: var(--edge);
+  }
+
+  /* Accent assignment lives in CSS, not inline style attributes,
+     so the Content-Security-Policy can forbid inline styles entirely. */
+  [data-accent="brass"] { --accent: var(--brass); }
+  [data-accent="sky"]   { --accent: var(--sky); }
+  [data-accent="rose"]  { --accent: var(--rose); }
+  [data-accent="mint"]  { --accent: var(--mint); }
+}

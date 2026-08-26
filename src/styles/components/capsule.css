@@ -1,0 +1,76 @@
+@layer components {
+  .bench {
+    margin-block-start: clamp(2.25rem, 5vw, 3.25rem);
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 46rem) {
+    .bench { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .cap {
+    position: relative;
+    background: var(--slab);
+    border: 1px solid var(--edge);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-block-size: 8.5rem;
+
+    /* the stud — capsules snap together */
+    &::before {
+      content: "";
+      position: absolute;
+      inset-block-start: -5px;
+      inset-inline-start: 1.2rem;
+      inline-size: 26px;
+      block-size: var(--stud-h);
+      border-radius: 5px 5px 0 0;
+      background: var(--accent);
+    }
+
+    & b {
+      font-family: var(--mono);
+      font-size: var(--step--1);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    & span {
+      font-size: var(--step-3);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    & p {
+      font-size: var(--step--1);
+      color: var(--muted);
+      line-height: 1.45;
+      margin-block-start: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .cap {
+      animation: snap 520ms cubic-bezier(0.2, 0.8, 0.25, 1) backwards;
+
+      &:nth-child(1) { animation-delay: 60ms; }
+      &:nth-child(2) { animation-delay: 120ms; }
+      &:nth-child(3) { animation-delay: 180ms; }
+      &:nth-child(4) { animation-delay: 240ms; }
+    }
+
+    @keyframes snap {
+      from { opacity: 0; transform: translateY(-14px); }
+      to   { opacity: 1; transform: none; }
+    }
+  }
+}

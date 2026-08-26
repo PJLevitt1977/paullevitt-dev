@@ -1,0 +1,43 @@
+@layer components {
+  .masthead {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.75rem;
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    & .mark {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--ivory);
+      text-decoration: none;
+
+      & i {
+        inline-size: 14px;
+        block-size: 14px;
+        border-radius: 4px;
+        background: var(--brass);
+        flex: none;
+      }
+    }
+
+    & nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem 1.4rem;
+
+      & a {
+        color: var(--muted);
+        text-decoration: none;
+
+        &:hover, &[aria-current="page"] { color: var(--brass); }
+      }
+    }
+  }
+}
