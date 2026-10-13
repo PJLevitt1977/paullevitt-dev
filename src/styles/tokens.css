@@ -1,19 +1,37 @@
 @layer tokens {
   :root {
-    /* ── palette ────────────────────────────── */
-    --canvas: #0e1116;
-    --slab:   #171d26;
-    --slab-2: #202834;
-    --edge:   #2c3644;
-    --ivory:  #f1efe9;
-    --muted:  #8a94a4;
+    /* Opt into both schemes. This makes light-dark() resolve, and also hands
+       scrollbars, form controls and the like to the browser to theme. */
+    color-scheme: light dark;
 
-    --brass: #e3b23c;
-    --sky:   #56a8e0;
-    --rose:  #e0607e;
-    --mint:  #63c4a0;
+    /* ── surfaces & text ─────────────────────────────────────────────
+       Named by role, not by colour — --ivory stops being a useful name
+       the moment it has to be near-black half the time.
+       light-dark(<light value>, <dark value>)                        */
 
-    /* ── type ───────────────────────────────── */
+    --bg:         light-dark(#f3f1ec, #0e1116);
+    --surface:    light-dark(#fbfaf7, #171d26);
+    --surface-2:  light-dark(#f2efe7, #202834);
+    --border:     light-dark(#dad4c8, #2c3644);
+
+    --text:       light-dark(#16191f, #f1efe9);
+    --text-muted: light-dark(#5c6572, #8a94a4);
+
+    /* ── accents ─────────────────────────────────────────────────────
+       Each hue keeps its identity across schemes but not its value: the
+       dark-mode values are far too light to sit on a pale background and
+       would fail contrast badly. Light-mode values are darkened until
+       they clear 4.5:1 against --surface.                             */
+
+    --brass: light-dark(#8a6100, #e3b23c);
+    --sky:   light-dark(#1a5f94, #56a8e0);
+    --rose:  light-dark(#a62943, #e0607e);
+    --mint:  light-dark(#106b4e, #63c4a0);
+
+    /* Text placed *on top of* a filled accent — inverts with the scheme. */
+    --on-brass: light-dark(#fff8e8, #12161c);
+
+    /* ── type ────────────────────────────────────────────────────────  */
     --sans: "Avenir Next", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
     --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
 
@@ -24,19 +42,21 @@
     --step-3:  clamp(1.7rem, 1.4rem + 1.4vw, 2.6rem);
     --step-4:  clamp(2.7rem, 1.7rem + 4.6vw, 6rem);
 
-    /* ── space & shape ──────────────────────── */
+    /* ── space & shape ───────────────────────────────────────────────  */
     --gutter: clamp(1.25rem, 4vw, 3.5rem);
     --gap: 10px;
     --radius: 14px;
     --stud-w: 30px;
     --stud-h: 9px;
 
+    /* Cards read as raised in light mode and flat in dark, which is how
+       each scheme naturally signals elevation. */
+    --lift: light-dark(0 1px 2px rgb(22 25 31 / 6%), none);
+
     /* default accent — components override per instance */
-    --accent: var(--edge);
+    --accent: var(--border);
   }
 
-  /* Accent assignment lives in CSS, not inline style attributes,
-     so the Content-Security-Policy can forbid inline styles entirely. */
   [data-accent="brass"] { --accent: var(--brass); }
   [data-accent="sky"]   { --accent: var(--sky); }
   [data-accent="rose"]  { --accent: var(--rose); }

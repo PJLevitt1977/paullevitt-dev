@@ -8,9 +8,10 @@
   @media (min-width: 68rem) { .stack { grid-template-columns: repeat(4, 1fr); } }
 
   .stack-group {
-    background: var(--slab);
-    border: 1px solid var(--edge);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--lift);
     padding: 1.2rem;
 
     & h3 {
@@ -34,10 +35,10 @@
     & li {
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      background: var(--slab-2);
-      color: var(--muted);
+      background: var(--surface-2);
+      color: var(--text-muted);
 
-      &[data-core] { color: var(--ivory); background: var(--edge); }
+      &[data-core] { color: var(--text); background: var(--border); }
     }
   }
 }

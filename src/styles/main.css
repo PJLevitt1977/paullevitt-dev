@@ -33,7 +33,7 @@
     padding: 0.6rem 1rem;
     border-radius: 8px;
     background: var(--brass);
-    color: #12161c;
+    color: var(--on-brass);
     font-family: var(--mono);
     font-size: var(--step--1);
     text-decoration: none;

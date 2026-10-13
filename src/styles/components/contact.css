@@ -2,9 +2,10 @@
   .contact {
     --accent: var(--brass);
     position: relative;
-    background: var(--slab);
-    border: 1px solid color-mix(in oklab, var(--brass) 35%, var(--edge));
+    background: var(--surface);
+    border: 1px solid color-mix(in oklab, var(--brass) 35%, var(--border));
     border-radius: var(--radius);
+    box-shadow: var(--lift);
     padding: clamp(1.5rem, 4vw, 2.5rem);
 
     &::before {
@@ -28,7 +29,7 @@
 
     & p {
       margin-block-start: 0.9rem;
-      color: var(--muted);
+      color: var(--text-muted);
       max-width: 52ch;
     }
   }
@@ -48,16 +49,16 @@
     padding: 0.7rem 1.2rem;
     border-radius: 999px;
     text-decoration: none;
-    border: 1px solid var(--edge);
-    color: var(--ivory);
-    background: var(--slab-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: var(--surface-2);
     transition: border-color 180ms ease;
 
     &:hover { border-color: var(--brass); }
 
     &[data-primary] {
       background: var(--brass);
-      color: #12161c;
+      color: var(--on-brass);
       border-color: var(--brass);
       font-weight: 600;
     }

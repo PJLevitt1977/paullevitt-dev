@@ -5,7 +5,7 @@
     max-width: 62ch;
     font-size: var(--step-1);
     line-height: 1.65;
-    color: color-mix(in oklab, var(--ivory) 88%, var(--muted));
+    color: color-mix(in oklab, var(--text) 88%, var(--text-muted));
 
     & > * + * { margin-block-start: 1.35em; }
 
@@ -19,7 +19,7 @@
       margin-block-start: 3rem;
     }
 
-    & strong { color: var(--ivory); font-weight: 600; }
+    & strong { color: var(--text); font-weight: 600; }
 
     & a {
       color: var(--brass);
@@ -30,7 +30,7 @@
     & .lead {
       font-size: var(--step-2);
       line-height: 1.45;
-      color: var(--ivory);
+      color: var(--text);
       letter-spacing: -0.015em;
       text-wrap: pretty;
     }
@@ -42,11 +42,12 @@
     position: relative;
     margin-block: 2.25rem;
     padding: 1.3rem 1.4rem;
-    background: var(--slab);
-    border: 1px solid var(--edge);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--lift);
     font-size: var(--step-0);
-    color: var(--muted);
+    color: var(--text-muted);
 
     &::before {
       content: "";
@@ -76,9 +77,10 @@
 
   .principle {
     position: relative;
-    background: var(--slab);
-    border: 1px solid var(--edge);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--lift);
     padding: 1.2rem;
 
     &::before {
@@ -98,14 +100,14 @@
       letter-spacing: -0.025em;
       line-height: 1.2;
       text-wrap: balance;
-      color: var(--ivory);
+      color: var(--text);
     }
 
     & p {
       margin-block-start: 0.6rem;
       font-size: var(--step-0);
       line-height: 1.55;
-      color: var(--muted);
+      color: var(--text-muted);
     }
   }
 
@@ -122,8 +124,8 @@
 
   .portrait {
     border-radius: var(--radius);
-    border: 1px solid var(--edge);
-    background: var(--slab);
+    border: 1px solid var(--border);
+    background: var(--surface);
     aspect-ratio: 4 / 5;
     object-fit: cover;
     inline-size: 100%;
@@ -133,7 +135,7 @@
     margin-block-start: 0.7rem;
     font-family: var(--mono);
     font-size: var(--step--1);
-    color: var(--muted);
+    color: var(--text-muted);
     line-height: 1.6;
   }
 }

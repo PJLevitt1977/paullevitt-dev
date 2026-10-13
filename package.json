@@ -9,6 +9,7 @@
     "src/about/index.html"
   ],
   "scripts": {
+    "start": "npm run dev",
     "dev": "parcel --port 3000 --open",
     "build": "parcel build --no-source-maps && cp -R static/. dist/",
     "clean": "rm -rf dist .parcel-cache",

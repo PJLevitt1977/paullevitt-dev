@@ -12,9 +12,10 @@
 
   .cap {
     position: relative;
-    background: var(--slab);
-    border: 1px solid var(--edge);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--lift);
     padding: 1.1rem 1.1rem 1.2rem;
     display: flex;
     flex-direction: column;
@@ -39,7 +40,7 @@
       font-weight: 400;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--text-muted);
     }
 
     & span {
@@ -52,7 +53,7 @@
 
     & p {
       font-size: var(--step--1);
-      color: var(--muted);
+      color: var(--text-muted);
       line-height: 1.45;
       margin-block-start: auto;
     }
