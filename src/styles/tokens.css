@@ -9,12 +9,12 @@
        the moment it has to be near-black half the time.
        light-dark(<light value>, <dark value>)                        */
 
-    --bg:         light-dark(#f3f1ec, #0e1116);
-    --surface:    light-dark(#fbfaf7, #171d26);
-    --surface-2:  light-dark(#f2efe7, #202834);
-    --border:     light-dark(#dad4c8, #2c3644);
+    --bg: light-dark(#f3f1ec, #0e1116);
+    --surface: light-dark(#fbfaf7, #171d26);
+    --surface-2: light-dark(#f2efe7, #202834);
+    --border: light-dark(#dad4c8, #2c3644);
 
-    --text:       light-dark(#16191f, #f1efe9);
+    --text: light-dark(#16191f, #f1efe9);
     --text-muted: light-dark(#5c6572, #8a94a4);
 
     /* ── accents ─────────────────────────────────────────────────────
@@ -24,9 +24,9 @@
        they clear 4.5:1 against --surface.                             */
 
     --brass: light-dark(#8a6100, #e3b23c);
-    --sky:   light-dark(#1a5f94, #56a8e0);
-    --rose:  light-dark(#a62943, #e0607e);
-    --mint:  light-dark(#106b4e, #63c4a0);
+    --sky: light-dark(#1a5f94, #56a8e0);
+    --rose: light-dark(#a62943, #e0607e);
+    --mint: light-dark(#106b4e, #63c4a0);
 
     /* Text placed *on top of* a filled accent — inverts with the scheme. */
     --on-brass: light-dark(#fff8e8, #12161c);
@@ -35,12 +35,13 @@
     --sans: "Avenir Next", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
     --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
 
+    --step--2: clamp(0.64rem, 0.60rem + 0.1vw, 0.76rem);
     --step--1: clamp(0.76rem, 0.74rem + 0.1vw, 0.82rem);
-    --step-0:  clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
-    --step-1:  clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
-    --step-2:  clamp(1.35rem, 1.2rem + 0.75vw, 1.8rem);
-    --step-3:  clamp(1.7rem, 1.4rem + 1.4vw, 2.6rem);
-    --step-4:  clamp(2.7rem, 1.7rem + 4.6vw, 6rem);
+    --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
+    --step-1: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+    --step-2: clamp(1.35rem, 1.2rem + 0.75vw, 1.8rem);
+    --step-3: clamp(1.7rem, 1.4rem + 1.4vw, 2.6rem);
+    --step-4: clamp(2.7rem, 1.7rem + 4.6vw, 6rem);
 
     /* ── space & shape ───────────────────────────────────────────────  */
     --gutter: clamp(1.25rem, 4vw, 3.5rem);
@@ -57,8 +58,19 @@
     --accent: var(--border);
   }
 
-  [data-accent="brass"] { --accent: var(--brass); }
-  [data-accent="sky"]   { --accent: var(--sky); }
-  [data-accent="rose"]  { --accent: var(--rose); }
-  [data-accent="mint"]  { --accent: var(--mint); }
+  [data-accent="brass"] {
+    --accent: var(--brass);
+  }
+
+  [data-accent="sky"] {
+    --accent: var(--sky);
+  }
+
+  [data-accent="rose"] {
+    --accent: var(--rose);
+  }
+
+  [data-accent="mint"] {
+    --accent: var(--mint);
+  }
 }
