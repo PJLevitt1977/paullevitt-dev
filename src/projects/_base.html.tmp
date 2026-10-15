@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Paul Levitt — Projects - {{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <link rel="canonical" href="https://paullevitt.dev/">
+
+  <link rel="icon" type="image/png" href="../../assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../../assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Paul Levitt" />
+  <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Paul Levitt — Projects - {{TITLE}}">
+  <meta property="og:description"
+    content="Metadata-driven platforms, domain-specific languages and internationalization at enterprise scale.">
+  <meta property="og:url" content="https://paullevitt.dev/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
+
+  <link rel="stylesheet" href="../../styles/main.css">
+  <script type="module" src="../../scripts/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Paul Levitt",
+    "jobTitle": "Technical Architect",
+    "email": "mailto:hello@paullevitt.dev",
+    "url": "https://paullevitt.dev/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Brooklyn", "addressRegion": "NY", "addressCountry": "US" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of the West of England, Bristol" },
+    "knowsAbout": ["Software architecture", "Domain-specific languages", "Internationalization", "Node.js", "Distributed systems"],
+    "sameAs": ["https://www.linkedin.com/in/paullevitt-dev", "https://github.com/PJLevitt1977"]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- <a class="skip-link" href="#main">Skip to content</a> -->
+
+  <div class="shell">
+
+    <header class="masthead">
+      <a class="mark" href="/"><i></i> Paul Levitt</a>
+      <nav aria-label="Sections">
+        <a href="#capabilities">What I do</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#experience">Experience</a>
+        <a href="/about/">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+
+      <section class="hero">
+        <p class="eyebrow">Projects &nbsp;·&nbsp; Case Study</p>
+
+        <h1>{{HEADING}}</h1>
+
+        <p class="standfirst">
+          {{SUMMARY}}
+        </p>
+
+        <!-- TODO: USE FOR PROPITIATORY DISCLAIMER -->
+        <!-- <p class="availability"><i></i> Case Study</p> -->
+      </section>
+
+      <section class="band">
+        <h2>{{SECTION_HEADING}}</h2>
+        <!-- Paragraph sections -->
+      </section>
+
+    </main>
+
+    <footer class="site">
+      <p>Hand-built. No frameworks, no runtime dependencies, no trackers.</p>
+      <p>© 2026 Paul</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>
