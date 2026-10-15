@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Paul Levitt — Projects - DNA</title>
+  <meta name="description"
+    content="A unified metadata schema and composition system that let Lifion serve one application, tailored per request, across every market and client configuration — without maintaining separate app builds.">
+  <link rel="canonical" href="https://paullevitt.dev/">
+
+  <link rel="icon" type="image/png" href="../../assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../../assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Paul Levitt" />
+  <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Paul Levitt — Projects - DNA">
+  <meta property="og:description"
+    content="Metadata-driven platforms, domain-specific languages and internationalization at enterprise scale.">
+  <meta property="og:url" content="https://paullevitt.dev/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
+
+  <link rel="stylesheet" href="../../styles/main.css">
+  <script type="module" src="../../scripts/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Paul Levitt",
+    "jobTitle": "Technical Architect",
+    "email": "mailto:hello@paullevitt.dev",
+    "url": "https://paullevitt.dev/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Brooklyn", "addressRegion": "NY", "addressCountry": "US" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of the West of England, Bristol" },
+    "knowsAbout": ["Software architecture", "Domain-specific languages", "Internationalization", "Node.js", "Distributed systems"],
+    "sameAs": ["https://www.linkedin.com/in/paullevitt-dev", "https://github.com/PJLevitt1977"]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="shell">
+
+    <header class="masthead">
+      <a class="mark" href="/"><i></i> Paul Levitt</a>
+      <nav aria-label="Sections">
+        <a href="/#capabilities">What I do</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/#stack">Stack</a>
+        <a href="/#experience">Experience</a>
+        <a href="/about/">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+
+      <section class="hero">
+        <p class="eyebrow">Projects &nbsp;·&nbsp; Case Study</p>
+
+        <h1>
+          <em>DNA</em> — unified metadata for composable apps
+        </h1>
+
+        <p class="standfirst">
+          Designed and built DNA, a unified metadata schema, and the compiler that turns it into working application
+          objects — tables, UI, business rules, and more — in real time. It replaced per-type fragmentation inherited
+          from HR.net and became the foundation every other platform service ran on. It also implements the composition
+          mechanism described in US Patent #10,558,436 B2, where I'm a co-inventor.
+        </p>
+
+        <!-- TODO: USE FOR PROPITIATORY DISCLAIMER -->
+        <!-- <p class="availability"><i></i> Case Study</p> -->
+      </section>
+
+      <section class="band">
+        <div class="prose">
+          <h2 id="situation">The Problem</h2>
+
+          <p>
+            HR.net already delivered one HR platform across multiple countries, but every metadata type had its own
+            storage, structure, and services. Cross-feature enhancements and localizations were achievable, but only up
+            to a point — some still needed custom scripts or copied/duplicated metadata to work around the
+            fragmentation. We built mechanisms within HR.net to ease this, but the underlying per-type fragmentation
+            remained.
+          </p>
+
+          <p>
+            As Lifion started greenfield, that was the opportunity to address the root cause rather than keep working
+            around it.
+          </p>
+
+
+          <h2 id="task">The Goal</h2>
+
+          <ul>
+            <li>Unify type definitions, algorithms, and services into a single consistent schema from the start, rather
+              than continuing to patch around per-type fragmentation.</li>
+            <li>Compose the right version of an app per request from shared, layered parts, instead of custom scripts,
+              copied metadata, or duplicate builds.</li>
+            <li>Make localization and customization a configuration-time concern, not a build-time or script-time one.
+            </li>
+          </ul>
+
+          <h2 id="action">The Approach</h2>
+
+          <ul>
+            <li><b>DNA</b> — a single schema defining the rules all metadata types follow, replacing the prior per-type
+              fragmentation with one consistent model.</li>
+            <li><b>Capsules</b> — on top of DNA, metadata objects are grouped into capsules. Every feature has one
+              "global" capsule, always included at runtime, plus one or more capsules scoped to a specific context —
+              typically a localization (e.g., US, GB).</li>
+            <li><b>Ownership</b> — each piece of metadata is owned by exactly one capsule: global if it's shared or
+              localizable by default (e.g., the base address UI), or a context-specific capsule if it's a localization
+              override (e.g., address UI under the US capsule).</li>
+            <li><b>Two kinds of layering</b> — localization (the same address-capture UI composed differently for US vs.
+              UK, no duplicate definitions) and cross-feature enhancement (enabling both Time & Attendance and Payroll
+              let Time & Attendance extend Payroll with PTO capabilities — only when both were enabled).</li>
+            <li><b>Deterministic composition</b> — the same inputs and enabled modules always produced the same output.
+            </li>
+            <li><b>The compiler</b> — I designed and wrote it myself: the DNA model, the layering/override semantics,
+              and the composition pipeline implementing the core algorithm described in the patent — flattening and
+              hydrating, turning DNA's flat stored format into the hierarchical structure runtime consumers like the UI
+              renderer and business rules engine need. After I handed it off, a team maintained it and added caching to
+              improve reuse of compiled variants in production.</li>
+          </ul>
+
+          <p>
+            Co-inventor on US Patent 10,558,436 ("Dynamically Composing Products Using Capsules"), which describes
+            this composition mechanism; the compiler is part of how it's implemented in production.
+          </p>
+
+          <h2 id="result">The Impact</h2>
+
+          <ul>
+            <li>Every other platform service consumed the compiler — it became the foundation the entire shipped HCM
+              product was built on, not a feature confined to one area.</li>
+            <li>Verified correctness at two levels: unit tests on the composition algorithm itself, and scenario tests
+              confirming compiled output met localization and override requirements.</li>
+            <li>After handoff, the team's caching work targeted production efficiency of compiled variants; I don't have
+              measured performance numbers to cite, so I'm not claiming a specific gain there.</li>
+          </ul>
+
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="prose">
+          <div class="aside">
+            <p>
+              <b>US Patent #10,558,436 B2</b>
+            </p>
+            <p>
+              <em>Dynamically Composing Products Using Capsules.</em>
+            </p>
+            <p>
+              Filed Jan. 2016, granted Feb. 2020.
+              <br>
+              Assigned to ADP, Inc. <a href="https://patents.google.com/patent/US10558436B2/en" target="_blank"
+                rel="noopener noreferrer">Public record</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site">
+      <p>Hand-built. No frameworks, no runtime dependencies, no trackers.</p>
+      <p>© 2026 Paul</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>
