@@ -12,7 +12,9 @@
      dark text on a light background renders too thin *with* it. So this is
      a dark-mode-only correction, not a global reset. */
   @media (prefers-color-scheme: dark) {
-    body { -webkit-font-smoothing: antialiased; }
+    body {
+      -webkit-font-smoothing: antialiased;
+    }
   }
 
   .shell {
@@ -23,7 +25,7 @@
   .band {
     padding-block: clamp(2.75rem, 6vw, 5rem);
 
-    & > h2 {
+    &>h2 {
       font-family: var(--mono);
       font-size: var(--step--1);
       font-weight: 400;
@@ -46,11 +48,30 @@
   }
 
   @media (min-width: 52rem) {
-    .grid-6 { grid-template-columns: repeat(6, 1fr); }
+    .grid-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 
-  .span-2 { grid-column: span 2; }
-  .span-3 { grid-column: span 3; }
+  .span-2 {
+    grid-column: span 2;
+  }
+
+  .span-3 {
+    grid-column: span 3;
+  }
+
+  .span-4 {
+    grid-column: span 4;
+  }
+
+  .span-5 {
+    grid-column: span 5;
+  }
+
+  .span-6 {
+    grid-column: span 6;
+  }
 
   footer.site {
     border-block-start: 1px solid var(--border);

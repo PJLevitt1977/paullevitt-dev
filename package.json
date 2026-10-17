@@ -6,8 +6,9 @@
   "type": "module",
   "source": [
     "src/index.html",
-    "src/about/index.html"
-  ],
+    "src/about/index.html",
+    "src/projects/index.html"
+  ],  
   "scripts": {
     "start": "npm run dev",
     "dev": "parcel --port 3000 --open",
