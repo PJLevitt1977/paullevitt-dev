@@ -7,8 +7,7 @@
   "source": [
     "src/index.html",
     "src/about/index.html",
-    "src/projects/index.html",
-    "src/projects/wall-planner/index.html"
+    "src/projects/index.html"
   ],  
   "scripts": {
     "start": "npm run dev",
