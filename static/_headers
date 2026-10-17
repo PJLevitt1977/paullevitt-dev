@@ -10,3 +10,6 @@
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+
+/projects/wall-planner/*
+  Content-Security-Policy: default-src 'self'; img-src 'unsafe-inline' data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; font-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
