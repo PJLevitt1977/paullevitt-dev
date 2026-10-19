@@ -1,4 +1,5 @@
 @layer components {
+
   /* Long-form reading column. Deliberately narrower than the grid pages —
      prose wants ~65 characters, not the full 1200px shell. */
   .prose {
@@ -7,9 +8,11 @@
     line-height: 1.65;
     color: color-mix(in oklab, var(--text) 88%, var(--text-muted));
 
-    & > * + * { margin-block-start: 1.35em; }
+    &>*+* {
+      margin-block-start: 1.35em;
+    }
 
-    & > h2 {
+    &>h2 {
       font-family: var(--mono);
       font-size: var(--step--1);
       font-weight: 400;
@@ -19,7 +22,14 @@
       margin-block-start: 3rem;
     }
 
-    & strong { color: var(--text); font-weight: 600; }
+    &>ul>li {
+      margin-block-start: 1em;
+    }
+
+    & strong {
+      color: var(--text);
+      font-weight: 600;
+    }
 
     & a {
       color: var(--brass);
@@ -60,7 +70,9 @@
       background: var(--accent);
     }
 
-    & p + p { margin-block-start: 0.8rem; }
+    & p+p {
+      margin-block-start: 0.8rem;
+    }
   }
 
   /* Principles — short, declarative, scannable between prose sections. */
@@ -72,7 +84,9 @@
   }
 
   @media (min-width: 46rem) {
-    .principles { grid-template-columns: repeat(2, 1fr); }
+    .principles {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .principle {
@@ -119,7 +133,9 @@
   }
 
   @media (min-width: 60rem) {
-    .about-head { grid-template-columns: 1fr 18rem; }
+    .about-head {
+      grid-template-columns: 1fr 18rem;
+    }
   }
 
   .portrait {
